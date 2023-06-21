@@ -1,0 +1,61 @@
+<h1 id="products"></h1>
+
+<div class="col">
+  <div style="margin-left: 39%">
+    <div class="input-group" style="width: 30%">
+      <input type="text" placeholder="Search" [(ngModel)]="searchValue" class="form-control">
+    </div>
+  </div>
+  <div>
+
+    <h1>
+
+    </h1>
+  </div>
+  <table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+    <tr>
+      <th class="align-middle" scope="col">Export Report</th>
+      <th class="align-middle" scope="col">#Id</th>
+      <th class="align-middle" scope="col">Target</th>
+      <th class="align-middle" scope="col">First Name</th>
+      <th class="align-middle" scope="col">Last Name</th>
+      <th class="align-middle" scope="col">Phone Number</th>
+      <th class="align-middle" scope="col">TYPE</th>
+      <th class="align-middle" scope="col">Call Duration</th>
+      <th class="align-middle" scope="col">E-mail</th>
+      <th class="align-middle" scope="col">Coordinates</th>
+      <th class="align-middle" scope="col">Direction</th>
+      <th class="align-middle" scope="col">Participant</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr
+      *ngFor="let product of products | filter: searchValue | paginate : {itemsPerPage: numberOfItemsPerP, currentPage: p}">
+      <th class="align-middle" style="background: white" scope="col">
+      <a (click)="generateReport(product.productId)"
+         class="btn btn-outline-primary mx-1" style="background-color: white">Download
+      </a>
+      </th>
+      <th class="align-middle" style="background: white" scope="col">{{product.productId}}</th>
+      <th class="align-middle" style="background: white" scope="col">{{product.targetModel.targetId}}</th>
+      <th class="align-middle" style="background: white" scope="col">{{product.firstName}}</th>
+      <th class="align-middle" style="background: white" scope="col">{{product.lastName}}</th>
+      <th class="align-middle" style="background: white" scope="col">{{product.phoneNr}}</th>
+      <th class="align-middle" style="background: white" scope="col">{{product.productType}}</th>
+      <th class="align-middle" style="background: white" scope="col">{{product.callDuration}}</th>
+      <th class="align-middle" style="background: white" scope="col">{{product.emailAddress}}</th>
+      <th class="align-middle" style="background: white" scope="col">
+        <a
+          href="{{'https://www.openstreetmap.org/?mlat='+product.coordinates.split(',')[0]+'&mlon='+product.coordinates.split(',')[1]}}"
+          target="_blank"> {{product.coordinates}}</a>
+      </th>
+      <th class="align-middle" style="background: white" scope="col">{{product.direction}}</th>
+      <th class="align-middle" style="background: white" scope="col">{{product.participantModel.participantId}}</th>
+    </tr>
+    </tbody>
+  </table>
+  <div style="margin-left: 38%">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>

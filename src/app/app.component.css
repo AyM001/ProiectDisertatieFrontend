@@ -1,0 +1,11 @@
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/background.jpg'); /* Replace with your image file name and extension */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}

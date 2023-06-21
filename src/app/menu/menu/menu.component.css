@@ -1,0 +1,44 @@
+#a {
+  margin: auto;
+  width: 10%;
+  padding: 10px;
+}
+#nav{
+  width: 100%;
+  background-color: darkblue;
+}
+#help{
+  color: white;
+  margin: 30px;
+}
+#home{
+  color: white;
+  margin: 30px;
+}
+#Explore{
+  color: white;
+  margin: 30px;
+}
+#contact{
+  color: white;
+  margin: 25px;
+}
+#login{
+  color: white;
+  margin: 30px;
+}
+#register{
+  color: white;
+  margin: 30px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh; /* Adjust to desired height */
+}
+
+.centered-div {
+  /* Styles for the centered div */
+}

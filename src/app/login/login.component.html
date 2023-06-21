@@ -1,0 +1,19 @@
+
+<div class="bg-img">
+  <div id="message">
+    <h1 style="font-family:'Apple Color Emoji'"><i><b>Criminal Analytics for a safer world</b></i></h1>
+
+  </div>
+  <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
+  <div class="alert alert-success" *ngIf='loginSuccess'>{{successMessage}}</div>
+  <form action="/action_page.php" class="container">
+
+    <label ><b>Username</b></label>
+    <input type="text"  [(ngModel)]="username" placeholder="Enter username" name="username" required>
+
+    <label ><b>Password</b></label>
+    <input type="password"  [(ngModel)]="password" placeholder="Enter Password" name="psw" required>
+
+    <button (click)=handleLogin() type="submit" class="btn">Login</button>
+  </form>
+</div>
